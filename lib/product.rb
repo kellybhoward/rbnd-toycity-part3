@@ -27,6 +27,10 @@ class Product
         @stock > 0
     end
 
+    def decrease_stock
+        @stock -= 1
+    end
+
     def self.find_by_title(title)
         @@products.each do |p|
             if p.title == title

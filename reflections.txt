@@ -1,0 +1,24 @@
+#########################
+#Toy City 3: Reflections#
+#########################
+
+Q: How long did you spend working on this project?
+A:  ~ 2 hrs
+
+Q: What was the most rewarding challenge you conquered?
+A:  Coming up with new feature ideas.
+
+Q: What two additional features did you build? Why?
+A:  (1) Rejecting a purchase
+    - Added Reject class (similar to transaction class)
+    - Added customer method reject
+    - Added increase_stock to product to keep product count up to date
+    (Why?) Sometimes customers make mistakes in purchasing items and need to return them
+
+    (2) Timestamps for transactions for bookkeeping
+    - adding purchase_timestamp to transaction class
+    - adding a display_time method
+    (Why?) Timestamps are vital for tracking purchasing history and keeping stats on a customer's shopping habits
+
+Q: Where do you still have room to grow?
+A:    Making my code more Ruby style and less using Ruby to code like a Javascript programmer

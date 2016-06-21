@@ -31,10 +31,14 @@ class Product
         @stock -= 1
     end
 
+    def increase_stock
+        @stock += 1
+    end
+
     def self.find_by_title(title)
-        @@products.each do |p|
-            if p.title == title
-                return p
+        @@products.each do |product|
+            if product.title == title
+                return product
             end
         end
     end

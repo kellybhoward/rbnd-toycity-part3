@@ -2,6 +2,7 @@ require_relative "lib/errors"
 require_relative "lib/customer"
 require_relative "lib/product"
 require_relative "lib/transaction"
+require_relative "lib/reject"
 
 # PRODUCTS
 
@@ -60,7 +61,17 @@ puts walter.purchase(nanoblock)
 puts Transaction.all.count # Should return 2
 
 transaction2 = Transaction.find(2)
+
+# Test out purchase time method with converting utc to String
+transaction2.display_time
+
 puts transaction2.product == nanoblock # Should return true
 
 # walter.purchase(firehouse) # DONE
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+# Add tests for new features
+# rejecting a product purchase
+puts walter.reject(nanoblock)
+puts Reject.all.count
+puts nanoblock.stock # goes from 10 in stock to 11 in stock

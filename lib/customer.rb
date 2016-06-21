@@ -27,6 +27,10 @@ class Customer
         end
     end
 
+    def reject(product)
+        Reject.new(self, product)
+    end
+
     private
 
     def add_to_customers

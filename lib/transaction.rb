@@ -1,5 +1,5 @@
 class Transaction
-    attr_reader :id, :customer, :product
+    attr_reader :id, :customer, :product, :purchase_timestamp
     @@transactions = []
     @@id = 1
 
@@ -8,6 +8,7 @@ class Transaction
         @product = product
         @id = @@id
         @@id += 1
+        @purchase_timestamp = Time.now.utc
         @product.decrease_stock
         add_to_transactions
     end
@@ -22,6 +23,10 @@ class Transaction
                 return transaction
             end
         end
+    end
+
+    def display_time
+        puts "This item was purchased on: " + @purchase_timestamp.strftime("%B %e, %Y at %I:%M %p")
     end
 
     private
